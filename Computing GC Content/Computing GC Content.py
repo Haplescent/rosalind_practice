@@ -37,9 +37,6 @@ def fasta_txt_to_fasta_dict(fasta_txt):
         fasta_dict[n_split_list[0]] = ''.join(n_split_list[1:])
     return fasta_dict
 
-fasta_dict = fasta_txt_to_fasta_dict(fasta_txt)
-#print(fasta_dict['Rosalind_7463'])
-
 def gc_content(fasta_dict, key):
     """
     takes key from fasta_dict and returns percent gc content of the dna
@@ -70,5 +67,8 @@ def highest_gc_content_string(fasta_dict):
     max_index = max(gc_percent_dict, key = gc_percent_dict.get)
     return [max_index, gc_content(fasta_dict, max_index)]
 
+
+fasta_dict = fasta_txt_to_fasta_dict(fasta_txt)
+#print(fasta_dict['Rosalind_7463'])
 
 print(highest_gc_content_string(fasta_dict))
