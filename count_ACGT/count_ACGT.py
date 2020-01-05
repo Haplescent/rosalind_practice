@@ -2,10 +2,11 @@ from sys import argv
 script, filename_txt = argv
 
 txt = open(filename_txt, "r")
-read_txt = txt.read()
+s = txt.read()
 print(type(read_txt))
 
 def count_ATGC(s):
+
     num_A, num_T, num_C, num_G = 0, 0, 0, 0
 
     for char in s:
